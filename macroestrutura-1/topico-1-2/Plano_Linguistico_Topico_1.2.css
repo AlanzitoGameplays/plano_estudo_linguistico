@@ -1,0 +1,395 @@
+/* ========================================================================== 
+   TÓPICO 1.2 — LINGUAGEM VERBAL, NÃO VERBAL E MULTIMODAL
+   CSS LOCAL — BASE EDITORIAL V2.1
+   Apenas componentes e recursos específicos deste tópico.
+   ========================================================================== */
+
+/* 01. ESTRUTURAS SEMÂNTICAS DA PRÁTICA ================================== */
+.resolved-example,
+.exercise,
+.answer {
+    margin: 0 0 5.4mm;
+}
+
+.keep-unit {
+    margin: 0;
+}
+
+.answer-note {
+    margin-bottom: 4mm;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.answer-model,
+.answer-criteria,
+.acceptance-range,
+.answer-limits {
+    margin: 2.4mm 0;
+    padding-left: 3mm;
+    border-left: var(--line-thin) solid var(--border);
+}
+
+.answer-model { border-left-color: var(--primary); }
+.answer-criteria { border-left-color: var(--accent); }
+.acceptance-range { border-left-color: var(--support); }
+.answer-limits { border-left-color: var(--muted); }
+
+.exercise td:empty::after {
+    content: "";
+    display: block;
+    min-height: 5mm;
+}
+
+/* 02. VISUAIS EXTERNOS =================================================== */
+.visual-topic {
+    margin-top: 4mm;
+    margin-bottom: 5mm;
+}
+
+.facsimile-topic--dedication img {
+    width: 61%;
+}
+
+.facsimile-topic--enem img {
+    width: 66%;
+}
+
+.visual-scene img {
+    width: 82%;
+}
+
+.documentary-image--serra img {
+    width: 94%;
+}
+
+.documentary-image--map img {
+    width: 100%;
+}
+
+.documentary-image--charge img {
+    width: 68%;
+}
+
+.visual-04 img {
+    width: 88%;
+}
+
+/* 03. AVISO DE ESTAÇÃO =================================================== */
+.station-notice {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 27mm;
+    grid-template-areas:
+        "problem icon"
+        "route route";
+    gap: 3mm 5mm;
+    width: 88%;
+    margin-inline: auto;
+    padding: 5mm 6mm;
+    border: var(--line-regular) solid var(--border);
+    background: var(--white);
+    font-family: var(--font-heading);
+}
+
+.station-notice__problem {
+    grid-area: problem;
+    align-self: center;
+    color: var(--primary);
+    font-size: 15pt;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: 0.015em;
+}
+
+.station-notice__icon {
+    grid-area: icon;
+    align-self: center;
+}
+
+.station-notice__route {
+    grid-area: route;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6mm;
+    padding-top: 3mm;
+    border-top: var(--line-thin) solid var(--border);
+    color: var(--text);
+    font-size: 10.8pt;
+    font-weight: 700;
+}
+
+.station-notice__arrow {
+    color: var(--secondary);
+    font-family: var(--font-symbol);
+    font-size: 23pt;
+    line-height: 1;
+}
+
+.station-notice__pictogram {
+    width: 24mm;
+    margin-inline: auto;
+}
+
+.station-icon__barrier {
+    fill: var(--soft);
+    stroke: var(--secondary);
+    stroke-width: 4;
+}
+
+.station-icon__stripe,
+.station-icon__legs {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 5;
+    stroke-linecap: round;
+}
+
+/* 04. ALERTA METEOROLÓGICO ============================================== */
+.weather-alert {
+    width: 94%;
+    margin-inline: auto;
+    border: var(--line-regular) solid var(--border);
+    background: var(--white);
+    font-family: var(--font-heading);
+}
+
+.weather-alert__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7mm;
+    padding: 4mm 5mm;
+    border-bottom: var(--line-thin) solid var(--border);
+}
+
+.weather-alert__title {
+    color: var(--primary);
+    font-size: 14pt;
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.weather-alert__time {
+    margin-top: 1.4mm;
+    color: var(--muted);
+    font-size: 9.5pt;
+    font-weight: 700;
+}
+
+.weather-alert__icon {
+    width: 27mm;
+    flex: 0 0 auto;
+}
+
+.weather-icon__cloud {
+    fill: var(--soft);
+    stroke: var(--secondary);
+    stroke-width: 4;
+}
+
+.weather-icon__bolt {
+    fill: var(--accent);
+}
+
+.weather-alert__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(45mm, .85fr);
+    align-items: center;
+    gap: 5mm;
+    padding: 4mm 5mm 5mm;
+}
+
+.weather-alert__map {
+    width: 100%;
+}
+
+.map-sector {
+    fill: var(--white);
+    stroke: var(--border);
+    stroke-width: 4;
+}
+
+.map-sector--affected {
+    fill: var(--soft);
+    stroke: var(--secondary);
+}
+
+.map-divider {
+    fill: none;
+    stroke: var(--border);
+    stroke-width: 2;
+    stroke-dasharray: 5 5;
+}
+
+.weather-alert__areas {
+    color: var(--text);
+    font-size: 9.3pt;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+/* 05. MICROCOMPOSIÇÕES DO EXERCÍCIO 10 ================================= */
+.high-voltage-notice {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7mm;
+    width: 70%;
+    margin-inline: auto;
+    padding: 4mm 5mm;
+    border: var(--line-regular) solid var(--border);
+    background: var(--white);
+    font-family: var(--font-heading);
+}
+
+.high-voltage-notice__text {
+    color: var(--primary);
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.high-voltage-notice__icon {
+    width: 22mm;
+    flex: 0 0 auto;
+}
+
+.voltage-icon__triangle {
+    fill: var(--soft);
+    stroke: var(--secondary);
+    stroke-width: 5;
+    stroke-linejoin: round;
+}
+
+.voltage-icon__bolt {
+    fill: var(--accent);
+}
+
+.microcomposition--10b {
+    width: 88%;
+    margin-inline: auto;
+    padding-top: 3mm;
+    border-top: var(--line-medium) solid var(--secondary);
+}
+
+.microcomposition__headline {
+    margin: 0 0 3mm;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-align: center;
+}
+
+.microcomposition--10b img {
+    width: 100%;
+}
+
+.deadline-notice {
+    width: 66%;
+    margin-inline: auto;
+    padding: 5mm 6mm;
+    border-top: var(--line-regular) solid var(--border);
+    border-bottom: var(--line-regular) solid var(--border);
+    background: var(--white);
+    color: var(--text);
+    font-family: var(--font-heading);
+    text-align: center;
+}
+
+.deadline-notice__today {
+    margin-bottom: 2.5mm;
+    color: var(--muted);
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.deadline-notice__main {
+    color: var(--primary);
+    font-size: 20pt;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.deadline-notice__time {
+    margin-top: 3mm;
+    color: var(--text);
+    font-size: 8.8pt;
+    font-weight: 700;
+}
+
+/* 06. COMPARAÇÃO DE DIREÇÃO — EXERCÍCIO 11 ============================== */
+.direction-comparison__item {
+    margin: 2mm auto 3mm;
+    padding: 2.8mm 4mm;
+    width: 56%;
+    border: var(--line-thin) solid var(--border);
+    background: var(--white);
+    font-family: var(--font-heading);
+    font-size: 12pt;
+    font-weight: 700;
+    text-align: center;
+}
+
+.direction-comparison__item p {
+    margin: 0;
+}
+
+/* 07. COMPOSIÇÕES 14A / 14B ============================================= */
+.notice-uniform,
+.notice-hierarchical {
+    width: 78%;
+    margin-inline: auto;
+    padding: 5mm 6mm;
+    border: var(--line-thin) solid var(--border);
+    background: var(--white);
+    color: var(--text);
+    font-family: var(--font-heading);
+    text-align: center;
+}
+
+.notice-uniform > div {
+    margin: 2.4mm 0;
+    font-size: 10.5pt;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.notice-hierarchical__risk {
+    color: var(--text);
+    font-size: 17.5pt;
+    font-weight: 700;
+    line-height: 1.03;
+}
+
+.notice-hierarchical__prohibition {
+    margin-top: 5mm;
+    padding-top: 3.5mm;
+    border-top: var(--line-thin) solid var(--border);
+    font-size: 11.5pt;
+    font-weight: 700;
+}
+
+.notice-hierarchical__alternative {
+    margin-top: 5.5mm;
+    font-size: 9.2pt;
+    font-weight: 600;
+}
+
+/* 08. AJUSTES DE IMPRESSÃO LOCAL ========================================= */
+@media print {
+    .station-notice,
+    .weather-alert,
+    .high-voltage-notice,
+    .deadline-notice,
+    .notice-uniform,
+    .notice-hierarchical,
+    .direction-comparison__item {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}

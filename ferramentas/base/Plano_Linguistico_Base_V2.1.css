@@ -1,0 +1,612 @@
+/* ========================================================================== 
+   PLANO DE ESTUDO LINGUÍSTICO E DA LÍNGUA PORTUGUESA — BASE HTML/CSS V2.1
+   Estado: CANDIDATA À VALIDAÇÃO MULTIMODAL — MIGRAÇÃO DO TÓPICO PENDENTE
+   Base estrutural: Plano de Estudo Matemático — Base HTML/CSS V1.0
+   ========================================================================== */
+
+/* 01. TOKENS E TEMA ======================================================== */
+.theme--ling {
+    --primary: #6B293C;
+    --secondary: #874257;
+    --accent: #9A6648;
+    --support: #B9836D;
+    --soft: #F1E4E7;
+    --border: #CBBDB6;
+    --text: #302A28;
+    --muted: #756A65;
+    --paper: #FBF8F3;
+    --white: #FBF8F3;
+    --screen: #E9E4DF;
+
+    --page-width: 210mm;
+    --page-height: 297mm;
+    --page-top: 12mm;
+    --page-right: 17mm;
+    --page-bottom: 7mm;
+    --page-left: 20mm;
+
+    --font-heading: Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+    --font-body: Georgia, "Times New Roman", "Liberation Serif", serif;
+    --font-symbol: "DejaVu Sans", sans-serif;
+    --font-ipa: "Charis SIL", "Doulos SIL", "DejaVu Sans", sans-serif;
+
+    --text-size: 9.55pt;
+    --text-line: 1.39;
+    --text-small: 8.2pt;
+    --text-micro: 7.25pt;
+
+    --title-cover: 27.5pt;
+    --title-part: 19.5pt;
+    --title-section: 19pt;
+    --title-subsection: 10.2pt;
+    --title-minor: 8.5pt;
+
+    --line-thin: 0.24mm;
+    --line-regular: 0.34mm;
+    --line-medium: 0.78mm;
+    --line-strong: 1.3mm;
+    --radius-small: 1.2mm;
+}
+
+/* 02. RESET E PRIMITIVAS GLOBAIS ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--screen);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body {
+    margin: 0;
+    overflow-x: auto;
+    background: var(--screen);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: var(--text-size);
+    line-height: var(--text-line);
+}
+
+main,
+section,
+article,
+header,
+footer,
+div,
+figure {
+    min-width: 0;
+}
+
+p,
+ul,
+ol,
+figure,
+table,
+blockquote {
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 0.60em;
+    orphans: 3;
+    widows: 3;
+}
+
+ul,
+ol {
+    margin-top: 0.45em;
+    margin-bottom: 0.72em;
+    padding-left: 1.35em;
+}
+
+li {
+    margin-bottom: 0.22em;
+    orphans: 2;
+    widows: 2;
+}
+
+strong,
+b {
+    color: var(--primary);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+/* 03. DOCUMENTO E PÁGINA ================================================== */
+.document {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    padding: 24px 0;
+}
+
+.page {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    width: var(--page-width);
+    height: var(--page-height);
+    padding: var(--page-top) var(--page-right) var(--page-bottom) var(--page-left);
+    overflow: visible;
+    background: var(--paper);
+    box-shadow: 0 5px 18px rgb(48 42 40 / 12%);
+    break-after: page;
+    page-break-after: always;
+}
+
+.page-content {
+    min-width: 0;
+    min-height: 0;
+    padding-top: 4mm;
+    padding-bottom: 3.6mm;
+    overflow: visible;
+}
+
+/* 04. CABEÇALHO E RODAPÉ ================================================== */
+.page-header,
+.page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8mm;
+    color: var(--muted);
+    font-family: var(--font-heading);
+    font-size: 7.35pt;
+    line-height: 1.15;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+}
+
+.page-header {
+    padding-bottom: 2.2mm;
+    border-bottom: var(--line-thin) solid var(--border);
+}
+
+.page-footer {
+    padding-top: 1.8mm;
+    border-top: var(--line-thin) solid var(--border);
+}
+
+.page-header > span:last-child,
+.page-footer > span:last-child {
+    text-align: right;
+}
+
+.header-context {
+    max-width: 92mm;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.page-number {
+    min-width: 8mm;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 05. CAPA ================================================================= */
+.page--cover {
+    grid-template-rows: 101mm minmax(0, 1fr);
+    padding: 0;
+}
+
+.cover-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18mm 24mm 15mm;
+    background: var(--primary);
+}
+
+.cover-top::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 4mm;
+    border-top: 1.6mm solid var(--secondary);
+    border-bottom: 1.6mm solid var(--accent);
+    background: var(--support);
+}
+
+.cover-collection {
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.095em;
+    text-transform: uppercase;
+}
+
+.cover-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20mm 24mm 19mm;
+}
+
+.cover-kicker {
+    margin-bottom: 3mm;
+    color: var(--muted);
+    font-family: var(--font-heading);
+    font-size: var(--text-small);
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.cover-title {
+    max-width: 155mm;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: var(--title-cover);
+    font-weight: 700;
+    line-height: 1.01;
+    letter-spacing: -0.026em;
+    text-transform: uppercase;
+}
+
+.cover-rule {
+    display: grid;
+    grid-template-columns: 64mm 28mm;
+    width: 92mm;
+    height: 1.4mm;
+    margin-top: 7mm;
+}
+
+.cover-rule span:first-child {
+    background: var(--secondary);
+}
+
+.cover-rule span:last-child {
+    background: var(--accent);
+}
+
+.cover-version {
+    margin-top: 2.3mm;
+    color: var(--muted);
+    font-family: var(--font-heading);
+    font-size: var(--text-small);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+/* 06. HIERARQUIA EDITORIAL =============================================== */
+.section-opening {
+    margin-bottom: 4.2mm;
+    padding-left: 4mm;
+    border-left: var(--line-strong) solid var(--secondary);
+}
+
+.section-label,
+.part-label {
+    margin-top: 0;
+    margin-bottom: 0.8mm;
+    color: var(--muted);
+    font-family: var(--font-heading);
+    font-size: var(--text-micro);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.section-title,
+.part-title {
+    margin: 0;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+}
+
+.section-title {
+    font-size: var(--title-section);
+}
+
+.part-title {
+    font-size: var(--title-part);
+}
+
+.part-opening {
+    margin-bottom: 4.3mm;
+    padding: 4.6mm 5.5mm 4.3mm;
+    border-top: 1.4mm solid var(--primary);
+    border-bottom: var(--line-regular) solid var(--border);
+    background: var(--white);
+}
+
+.part-opening::after {
+    content: "";
+    display: block;
+    width: 44mm;
+    height: var(--line-medium);
+    margin-top: 2.8mm;
+    background: var(--support);
+}
+
+.part-opening .part-label {
+    color: var(--accent);
+}
+
+.item-title,
+.gabarito-subtitle {
+    margin-top: 4.8mm;
+    color: var(--secondary);
+    font-family: var(--font-heading);
+    font-size: var(--title-subsection);
+    font-weight: 700;
+    line-height: 1.16;
+}
+
+.part-opening + .item-title,
+.section-opening + .item-title {
+    margin-top: 2.1mm;
+}
+
+.gabarito-subtitle {
+    margin-top: 1.2mm;
+    color: var(--accent);
+    font-size: 11pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.minor-title {
+    margin: 2.3mm 0 1mm;
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-size: var(--title-minor);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* 07. PROSA E ELEMENTOS BÁSICOS ========================================== */
+blockquote {
+    margin: 1.15mm 0 1.65mm 4mm;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* 08. INFRAESTRUTURA TABULAR ============================================= */
+.table-wrap {
+    max-width: 100%;
+    margin: 2.2mm 0 3mm;
+    overflow: visible;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background: var(--white);
+    font-size: 8.65pt;
+    line-height: 1.32;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+th,
+td {
+    padding: 2mm 2.5mm;
+    border: var(--line-thin) solid var(--border);
+    vertical-align: top;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+th {
+    background: var(--secondary);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 7.9pt;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+    background: var(--soft);
+}
+
+tbody tr:nth-child(odd) {
+    background: var(--white);
+}
+
+/* 09. FONTE SEMÂNTICA E PAGINAÇÃO ======================================== */
+.source-content {
+    display: none;
+}
+
+.source-section {
+    display: block;
+}
+
+.keep-with-next {
+    break-after: avoid;
+    page-break-after: avoid;
+}
+
+.atomic-group {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* 10. OUTLINE ============================================================= */
+.outline-root {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    text-transform: none;
+}
+
+.section-label > .outline-root {
+    display: block;
+}
+
+.part-label > .outline-root {
+    display: inline;
+}
+
+/* 11. DIAGNÓSTICO ========================================================= */
+.page--overflow-warning {
+    outline-offset: 2px;
+}
+
+/* 12. SCREEN ============================================================== */
+@media screen {
+    .page--overflow-warning {
+        border-radius: var(--radius-small);
+        outline: 2px solid var(--accent);
+    }
+
+    .debug-problem {
+        outline: 1px dashed var(--accent);
+        outline-offset: 1px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .document {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .page {
+        transform-origin: top left;
+    }
+}
+
+/* 13. PRINT =============================================================== */
+@media print {
+    html,
+    body {
+        width: var(--page-width);
+        margin: 0;
+        padding: 0;
+        background: var(--paper);
+    }
+
+    .document {
+        display: block;
+        gap: 0;
+        padding: 0;
+    }
+
+    .page {
+        margin: 0;
+        box-shadow: none;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .page:last-of-type {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+    .page--overflow-warning,
+    .debug-problem {
+        outline: 0;
+    }
+}
+
+/* 14. PONTO DE EXTENSÃO VISUAL =========================================== */
+.visual {
+    max-width: 100%;
+    margin: 2.2mm 0 3mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.visual img,
+.visual > svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+
+.visual figcaption {
+    margin-top: 1.3mm;
+    color: var(--muted);
+    font-family: var(--font-heading);
+    font-size: var(--text-micro);
+    line-height: 1.3;
+}
+
+/* 15. CORPUS VISUAL DEMONSTRATIVO ======================================== */
+.visual-test-diagram {
+    width: 100%;
+}
+
+.visual-test-box {
+    fill: var(--soft);
+    stroke: var(--secondary);
+    stroke-width: 3;
+}
+
+.visual-test-link {
+    stroke: var(--accent);
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.visual-test-raster img {
+    width: 100%;
+}
+
+.visual-test-facsimile img {
+    width: 72%;
+}
+
+/* 16. PRIMITIVAS LINGUÍSTICAS ESSENCIAIS ================================ */
+.ipa,
+[lang="x-ipa"] {
+    font-family: var(--font-ipa);
+}
+
+.symbol {
+    font-family: var(--font-symbol);
+}

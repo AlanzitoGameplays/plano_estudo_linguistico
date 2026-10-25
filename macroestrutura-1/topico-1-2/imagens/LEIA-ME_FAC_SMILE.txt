@@ -1,0 +1,14 @@
+FAC-SÍMILES — TÓPICO 1.2
+Plano de Estudo Linguístico e da Língua Portuguesa — 2026
+
+1. FAC_SIMILE_01_Dedicatoria_Memorias_Postumas_REFERENCIA_ATUAL.png
+   Fonte extraída: memoriasBras.pdf, página 1.
+   IMPORTANTE: o PDF disponível no projeto é uma edição/transcrição moderna, não um escaneamento da primeira edição de 1881.
+   Este arquivo serve como recorte provisório de referência para a disposição da dedicatória.
+   Para a apostila definitiva, caso se exija rigor documental máximo, convém substituí-lo por um recorte da edição de 1881 da Biblioteca Brasiliana Guita e José Mindlin (BBM-USP).
+
+2. FAC_SIMILE_02_Campanha_ENEM_2020_Questao_30.png
+   Fonte extraída: Prova_Enem_2020-2025_Completo.pdf, ENEM 2020, 1º dia, Caderno Azul, página 14, Questão 30.
+   O recorte preserva a composição verbal-visual analisada no Texto Teórico do Tópico 1.2.
+
+Os recortes foram exportados em PNG para integração posterior ao HTML/CSS.

@@ -1,0 +1,20 @@
+RECURSOS DOCUMENTAIS — TÓPICO 1.2
+Plano de Estudo Linguístico e da Língua Portuguesa — 2026
+
+1. IMAGEM_01_Serra_Pelada_1986_Sebastiao_Salgado.png
+   Fonte: Prova_FUVEST_2023-2026._Completo.pdf
+   Página do PDF compilado: 408
+   Corpus: Sebastião Salgado — Serra Pelada, 1986.
+   Extração: imagem raster incorporada ao PDF, sem reconstrução por IA.
+   Uso previsto: Exercício 7.
+
+2. IMAGEM_03_Charge_Crise_Climatica_FATEC_2025.png
+   Fonte: Prova_FATEC_2020-2026.pdf
+   Página do PDF compilado: 168
+   Prova: Fatec — 2º semestre de 2025.
+   Extração: imagem raster incorporada ao PDF, sem reconstrução por IA.
+   Conversão técnica: CMYK -> RGB apenas para compatibilidade com navegador/HTML.
+   Uso previsto: Exercício 15.
+
+Os arquivos preservam as composições originais reproduzidas nas provas.
+Não foram adicionadas setas, rótulos, destaques ou interpretações gráficas.

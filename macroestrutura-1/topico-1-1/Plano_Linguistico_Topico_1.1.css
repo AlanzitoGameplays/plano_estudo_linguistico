@@ -1,0 +1,192 @@
+/* ==========================================================================
+   TÓPICO 1.1 — LINGUAGEM E COMUNICAÇÃO
+   CSS LOCAL — MIGRAÇÃO PARA BASE EDITORIAL V2.1
+   Contém apenas componentes e recursos específicos do Tópico 1.1.
+   ========================================================================== */
+
+/* 01. DEFINIÇÕES DE TRABALHO ============================================= */
+.definition-working {
+    margin: 4.2mm 0 5mm;
+    padding: 3.4mm 4.2mm;
+    border-left: var(--line-medium) solid var(--primary);
+    background: color-mix(in srgb, var(--soft) 68%, transparent);
+}
+
+.definition-working__label {
+    margin-bottom: 1.4mm;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: var(--text-micro);
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.definition-working p:last-child {
+    margin-bottom: 0;
+}
+
+/* 02. CORPUS TEXTUAL REAL ================================================ */
+.corpus-text {
+    margin: 4mm 0 4.8mm;
+    padding-left: 4mm;
+    border-left: var(--line-regular) solid var(--accent);
+}
+
+.corpus-text blockquote {
+    margin: 0;
+}
+
+.corpus-text figcaption {
+    margin-top: 1.7mm;
+}
+
+/* 03. ESTRUTURAS SEMÂNTICAS DA PRÁTICA ================================== */
+.resolved-example,
+.exercise,
+.answer {
+    margin: 0 0 5.4mm;
+}
+
+.keep-unit {
+    margin: 0;
+}
+
+.alternatives {
+    margin: 2.8mm 0 3.8mm;
+    padding-left: 6mm;
+}
+
+.alternatives li {
+    margin-bottom: 1.6mm;
+}
+
+.answer-note {
+    margin-bottom: 4mm;
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Distinção funcional discreta, sem cards. */
+.answer-model,
+.answer-criteria,
+.acceptance-range,
+.answer-limits {
+    margin: 2.4mm 0;
+    padding-left: 3mm;
+    border-left: var(--line-thin) solid var(--border);
+}
+
+.answer-model { border-left-color: var(--primary); }
+.answer-criteria { border-left-color: var(--accent); }
+.acceptance-range { border-left-color: var(--support); }
+.answer-limits { border-left-color: var(--muted); }
+
+.answer-model > :last-child,
+.answer-criteria > :last-child,
+.acceptance-range > :last-child,
+.answer-limits > :last-child {
+    margin-bottom: 0;
+}
+
+.exercise td:empty::after {
+    content: "";
+    display: block;
+    min-height: 5mm;
+}
+
+/* 04. VISUAIS DO TÓPICO ================================================== */
+.visual-topic {
+    margin-top: 4.6mm;
+    margin-bottom: 5.6mm;
+}
+
+.visual-topic img {
+    width: 100%;
+}
+
+#tt-visual-01 img {
+    width: 94%;
+}
+
+/* 05. VISUAL TEÓRICO 2 — SVG INLINE LOCAL =============================== */
+#tt-visual-02 > svg {
+    width: 100%;
+    background: var(--white);
+    border: var(--line-thin) solid var(--border);
+    border-radius: 2.5mm;
+}
+
+#tt-visual-02 .svg-panel {
+    fill: var(--white);
+    stroke: var(--border);
+    stroke-width: 2;
+}
+
+#tt-visual-02 .svg-panel--accent {
+    fill: var(--soft);
+    stroke: var(--primary);
+}
+
+#tt-visual-02 .svg-title {
+    fill: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+}
+
+#tt-visual-02 .svg-label {
+    fill: var(--text);
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#tt-visual-02 .svg-label--compact {
+    font-size: 18px;
+}
+
+#tt-visual-02 .svg-small {
+    fill: var(--muted);
+    font-family: var(--font-heading);
+    font-size: 17px;
+}
+
+#tt-visual-02 .svg-small--strong {
+    fill: var(--primary);
+    font-weight: 700;
+}
+
+#tt-visual-02 .svg-relation {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#tt-visual-02 .svg-arrow-head {
+    fill: var(--primary);
+}
+
+#tt-visual-02 .svg-interpret-operation {
+    fill: var(--primary);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+#tt-visual-02 .svg-interpret-context {
+    fill: var(--soft);
+    fill-opacity: 0.55;
+    stroke: var(--border);
+    stroke-width: 2;
+}
+
+#tt-visual-02 .svg-interpret-context-title {
+    font-size: 21px;
+}
+
+#tt-visual-02 .svg-interpret-relation-label {
+    font-size: 18px;
+}
