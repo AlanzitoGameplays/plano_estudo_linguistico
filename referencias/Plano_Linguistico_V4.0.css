@@ -1,0 +1,49 @@
+@import url("../ferramentas/base/Plano_Linguistico_Base_V2.1.css");
+
+/* Adaptações exclusivas do documento-mestre. Geometria e tokens são da Base. */
+.plano-v4 .cover-title { margin: 0; line-height: 1.08; }
+.plano-v4 .cover-subtitle {
+    margin-bottom: 0;
+    font-size: 10pt;
+    line-height: 1.35;
+}
+.plano-v4 .cover-subtitle strong { color: inherit; font-weight: inherit; }
+.plano-v4 .guiding-principle { margin: 7mm 0 0; line-height: 1.5; }
+.plano-v4 .part-title { font-size: 18pt; line-height: 1.16; }
+.plano-v4 .section-title { font-size: 17pt; line-height: 1.16; }
+.plano-v4 h3.item-title { margin-bottom: 2mm; }
+.plano-v4 h4 { margin: 4mm 0 1.6mm; }
+.plano-v4 .macro-title {
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: 11.2pt;
+    line-height: 1.25;
+}
+.plano-v4 .central-question { margin-bottom: 2mm; }
+/* Tabelas diretas usam o mesmo respiro previsto na .table-wrap da Base. */
+.plano-v4 table { margin: 2.2mm 0 3mm; }
+.plano-v4 .curriculum-table col:first-child { width: 34%; }
+.plano-v4 .curriculum-table col:last-child { width: 66%; }
+.plano-v4 .analytical-table col:first-child { width: 25%; }
+.plano-v4 .analytical-table col:nth-child(2) { width: 37.5%; }
+.plano-v4 .analytical-table col:nth-child(3) { width: 37.5%; }
+.plano-v4 .linguistic-example { margin: 2mm 0 2mm 4mm; }
+.plano-v4 .linguistic-example strong { color: var(--text); }
+.plano-v4 .editorial-transition { height: 0; margin: 0; border: 0; }
+/* Rótulos correntes abreviados no HTML; tipografia e medidas são da Base.
+   Não esconder excessos: a auditoria de exportação verifica cada cabeçalho. */
+.plano-v4 .header-context {
+    overflow: visible;
+    text-overflow: clip;
+}
+
+/* A fonte continua legível se JavaScript estiver desativado ou indisponível. */
+html:not([data-pagination-ready="true"]) .plano-v4 .source-content {
+    display: block;
+    width: var(--page-width);
+    padding: 12mm 17mm 12mm 20mm;
+    background: var(--paper);
+}
+@media print {
+    html:not([data-pagination-ready="true"]) .plano-v4 .source-content { width: auto; }
+}
